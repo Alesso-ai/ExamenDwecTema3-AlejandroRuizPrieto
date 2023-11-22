@@ -75,7 +75,7 @@ function loop() {
     ctx.fillRect(0, 0, width, height);
 
     for (const ball of balls) {
-        ball.draw; //Quitamos parentesis no es funcion
+        ball.draw(); 
         ball.update();
         for (const otherBall of balls) {
             if (ball !== otherBall) {
