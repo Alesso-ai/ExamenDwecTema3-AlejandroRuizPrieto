@@ -4,11 +4,11 @@ const ctx = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth; // Se cambia al inner witdh no inner height
 const height = canvas.height = window.innerHeight;
 
-function random(min, max) {
+  function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function randomRGB() {
+ function randomRGB() {
     return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
 
@@ -25,7 +25,7 @@ class Ball {
     draw() {
         ctx.beginPath();
         ctx.fillStyle = this.color;
-        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI()); //Math.PI no es funcion , por eso salta error
+        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI); //Math.PI no es funcion , por eso salta error
         ctx.fill();
     }
 
@@ -71,7 +71,7 @@ while (balls.length < 4) {
 }
 
 function loop() {
-    ctx.fillStyle = 'rgba(0, 245, 0, 0.25)';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';//error de color de fondo 245 por 0
     ctx.fillRect(0, 0, width, height);
 
     for (const ball of balls) {
